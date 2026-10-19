@@ -1,0 +1,32 @@
+{%- comment -%}
+  Screenshot group for one step.
+  dir     folder under assets/images
+  desktop comma separated file names (no .png), shown full width
+  phone   comma separated file names, shown in a collapsible "phone" block
+  mode    "phone" for the client app, whose screenshots are phone-only and shown inline
+  alt     alt text
+{%- endcomment -%}
+{%- assign base = '/assets/images/' | append: include.dir | append: '/' -%}
+{%- assign desktop = include.desktop | default: '' | split: ',' -%}
+{%- assign phone = include.phone | default: '' | split: ',' -%}
+<div class="shot-group">
+{%- for f in desktop %}
+  <img class="shot" src="{{ base | append: f | append: '.png' | relative_url }}" alt="{{ include.alt }}" loading="lazy">
+{%- endfor %}
+{%- if include.mode == 'phone' %}
+  <div class="shot-phone-row">
+  {%- for f in phone %}
+    <img class="shot shot-phone-img" src="{{ base | append: f | append: '.png' | relative_url }}" alt="{{ include.alt }}" loading="lazy">
+  {%- endfor %}
+  </div>
+{%- elsif phone.size > 0 %}
+  <details class="shot-phone">
+    <summary>Xem trên điện thoại</summary>
+    <div class="shot-phone-row">
+    {%- for f in phone %}
+      <img class="shot shot-phone-img" src="{{ base | append: f | append: '.png' | relative_url }}" alt="{{ include.alt }} (điện thoại)" loading="lazy">
+    {%- endfor %}
+    </div>
+  </details>
+{%- endif %}
+</div>

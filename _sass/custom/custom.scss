@@ -1,0 +1,40 @@
+.shot-group {
+  margin: 1rem 0 1.5rem;
+}
+
+.shot {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem 0;
+  border: 1px solid #d9dde3;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.shot-phone-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.shot-phone-img {
+  max-width: 260px;
+}
+
+details.shot-phone {
+  margin: 0.5rem 0;
+}
+
+details.shot-phone > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.note {
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-left: 4px solid #c9a24d;
+  background: #fbf7ee;
+  border-radius: 4px;
+}

@@ -1,0 +1,10 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+node_modules/
+capture/node_modules/
+capture/.cache/
+capture/.cache-swagger.json
+Gemfile.lock

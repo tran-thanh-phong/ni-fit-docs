@@ -1,0 +1,23 @@
+title: NiFit - Hướng dẫn sử dụng
+description: Hướng dẫn sử dụng NiFit cho huấn luyện viên (PT) và học viên
+lang: vi
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+search_enabled: true
+heading_anchors: true
+permalink: pretty
+
+exclude:
+  - capture
+  - README.md
+  - node_modules
+  - vendor
+  - Gemfile
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

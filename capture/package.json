@@ -1,0 +1,12 @@
+{
+  "name": "ni-fit-docs-capture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "explore": "node explore.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.59.1",
+    "xlsx": "^0.18.5"
+  }
+}
