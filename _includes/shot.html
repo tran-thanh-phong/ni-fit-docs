@@ -1,32 +1,28 @@
 {%- comment -%}
-  Screenshot group for one step.
+  Screenshot group for one step. Phone shots show by default; desktop shots sit in a collapsed block.
   dir     folder under assets/images
-  desktop comma separated file names (no .png), shown full width
-  phone   comma separated file names, shown in a collapsible "phone" block
-  mode    "phone" for the client app, whose screenshots are phone-only and shown inline
+  desktop comma separated file names (no .png)
+  phone   comma separated file names (no .png)
+  mode    "phone" for the client app, which has phone shots only
   alt     alt text
 {%- endcomment -%}
 {%- assign base = '/assets/images/' | append: include.dir | append: '/' -%}
 {%- assign desktop = include.desktop | default: '' | split: ',' -%}
 {%- assign phone = include.phone | default: '' | split: ',' -%}
 <div class="shot-group">
-{%- for f in desktop %}
-  <img class="shot" src="{{ base | append: f | append: '.png' | relative_url }}" alt="{{ include.alt }}" loading="lazy">
-{%- endfor %}
-{%- if include.mode == 'phone' %}
+{%- if phone.size > 0 %}
   <div class="shot-phone-row">
   {%- for f in phone %}
     <img class="shot shot-phone-img" src="{{ base | append: f | append: '.png' | relative_url }}" alt="{{ include.alt }}" loading="lazy">
   {%- endfor %}
   </div>
-{%- elsif phone.size > 0 %}
-  <details class="shot-phone">
-    <summary>Xem trên điện thoại</summary>
-    <div class="shot-phone-row">
-    {%- for f in phone %}
-      <img class="shot shot-phone-img" src="{{ base | append: f | append: '.png' | relative_url }}" alt="{{ include.alt }} (điện thoại)" loading="lazy">
+{%- endif %}
+{%- if desktop.size > 0 and include.mode != 'phone' %}
+  <details class="shot-desktop">
+    <summary>Xem trên máy tính</summary>
+    {%- for f in desktop %}
+    <img class="shot" src="{{ base | append: f | append: '.png' | relative_url }}" alt="{{ include.alt }} (máy tính)" loading="lazy">
     {%- endfor %}
-    </div>
   </details>
 {%- endif %}
 </div>

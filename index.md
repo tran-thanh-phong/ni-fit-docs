@@ -24,5 +24,5 @@ Nên làm theo thứ tự trên: tạo học viên trước, rồi nhập chươ
 ## Về ảnh chụp trong tài liệu
 
 - Ảnh chụp từ **môi trường thử nghiệm** với dữ liệu mẫu (học viên "Minh Anh Nguyễn", file `plan-an-tap-mau.xlsx`).
-- Cổng quản trị chụp ở hai cỡ màn hình: máy tính (ảnh lớn) và điện thoại (bấm **Xem trên điện thoại** dưới ảnh).
+- Cổng quản trị chụp ở hai cỡ màn hình: điện thoại (mặc định) và máy tính (mặc định hiện ảnh điện thoại; bấm **Xem trên máy tính** dưới ảnh để xem bản máy tính).
 - Giao diện có thể thay đổi nhẹ theo từng phiên bản.
